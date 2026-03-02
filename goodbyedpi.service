@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStartPre=/bin/bash /opt/goodbyedpi/setup_iptables.sh
-ExecStart=/opt/goodbyedpi/goodbyedpi
-ExecStopPost=/bin/bash /opt/goodbyedpi/remove_iptables.sh
+ExecStartPre=/bin/bash /opt/goodbyedpi/scripts/setup_iptables.sh
+ExecStart=/opt/goodbyedpi/src/goodbyedpi
+ExecStopPost=/bin/bash /opt/goodbyedpi/scripts/remove_iptables.sh
 Restart=on-failure
 RestartSec=5
 
