@@ -1,0 +1,14 @@
+[Unit]
+Description=GoodbyeDPI-Linux DPI circumvention service
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash /opt/goodbyedpi/setup_iptables.sh
+ExecStart=/opt/goodbyedpi/goodbyedpi
+ExecStopPost=/bin/bash /opt/goodbyedpi/remove_iptables.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
